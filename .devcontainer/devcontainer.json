@@ -7,6 +7,11 @@
         "github-cli": "latest"
     },
     "settings": {},
-    "extensions": ["denoland.vscode-deno"],
+    "extensions": [
+        "denoland.vscode-deno",
+        "eamodio.gitlens",
+        "mhutchie.git-graph"
+
+    ],
     "forwardPorts": [3000]
 }
