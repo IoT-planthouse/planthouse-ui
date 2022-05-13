@@ -1,0 +1,12 @@
+{
+    "name": "Node.js",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "features": {
+        "github-cli": "latest"
+    },
+    "settings": {},
+    "extensions": ["denoland.vscode-deno"],
+    "forwardPorts": [3000]
+}
