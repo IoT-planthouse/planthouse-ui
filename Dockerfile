@@ -1,1 +1,0 @@
-FROM denoland/deno:1.21.2
