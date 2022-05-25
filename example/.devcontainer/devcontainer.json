@@ -1,0 +1,30 @@
+{
+    "name": "Node.js",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "features": {
+        "github-cli": "latest"
+    },
+    "settings": {
+        "[typescriptreact]": {
+            "editor.defaultFormatter": "denoland.vscode-deno"
+          },
+          "[typescript]": {
+            "editor.defaultFormatter": "denoland.vscode-deno"
+          },
+          "deno.enable": true,
+          "deno.unstable": true,
+          "deno.config": "./deno.json",
+          "deno.importMap": "./import_map.json"
+    },
+    "extensions": [
+        "denoland.vscode-deno",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "styled-components.vscode-styled-components",
+        "jock.svg"
+
+    ],
+    "forwardPorts": [3000]
+}

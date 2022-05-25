@@ -1,0 +1,8 @@
+{
+    "ssr": {
+        "exclude": [
+            "/path/from/root",
+            "/"
+        ]
+    }
+}
