@@ -1,4 +1,5 @@
-import { CARD, SENSOR_VALUE } from "./styles";
+import React from 'react';
+import { CARD, SENSOR_VALUE } from "../styles";
 
 type Props = {
   name: string;

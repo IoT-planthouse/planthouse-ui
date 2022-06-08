@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
-import { APP, LOGO, APPLICATION_NAME } from "./styles";
+import logo from "../logo.svg";
+import { APP, LOGO, APPLICATION_NAME } from "../styles";
 import { StatusDisplay } from "./StatusDisplay";
 
 function App() {
