@@ -12,7 +12,7 @@ export const SensorCard: React.FC<Props> = ({ sensorData }) => {
   return (
     <CARD>
       <p>{typeID}</p>
-      {/* <img src={`${name}.svg`} alt={name} width="75" height="75" /> */}
+      <img src={`${typeID}.svg`} alt={typeID} width="75" height="75" />
       <SENSOR_VALUE>
         {data.value} {data.unit}
       </SENSOR_VALUE>

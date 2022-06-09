@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { urls } from "../api-config";
 import { SensorCard } from "./SensorCard";
 import { ActuatorCard } from "./ActuatorCard";
 import { STATUS_DISPLAY } from "../styles";
