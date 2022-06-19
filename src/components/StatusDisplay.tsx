@@ -21,6 +21,9 @@ export const StatusDisplay = () => {
   const [light, setLight] = useState<MessageBody>(defaultData);
   const [temperature, setTemperature] = useState<MessageBody>(defaultData);
   const [humidity, setHumidity] = useState<MessageBody>(defaultData);
+  const [lamp, setLamp] = useState<MessageBody>(defaultData);
+  const [heater, setHeater] = useState<MessageBody>(defaultData);
+  const [humidifier, setHumidifier] = useState<MessageBody>(defaultData);
 
   const messageHandler = async (message: ServiceBusMessage) => {
     switch (message.body.typeID) {
@@ -32,8 +35,17 @@ export const StatusDisplay = () => {
         break;
       case TypeID.humidity:
         setHumidity(message.body);
+        break;
+      case TypeID.lamp:
+        setLamp(message.body);
+        break;
+      case TypeID.heater:
+        setHeater(message.body);
+        break;
+      case TypeID.humidifier:
+        setHumidifier(message.body);
+        break;
     }
-    console.log(message);
   };
 
   useEffect(() => subToSensors(messageHandler), []);
@@ -47,10 +59,10 @@ export const StatusDisplay = () => {
         {/* <SensorCard name={"isWindowOpen"} value={state.isWindowOpen} /> */}
       </STATUS_DISPLAY>
       <STATUS_DISPLAY>
-        <ActuatorCard />
-        <ActuatorCard />
-        <ActuatorCard />
-        <ActuatorCard />
+        <SensorCard sensorData={lamp}/>
+        <SensorCard sensorData={heater}/>
+        <SensorCard sensorData={humidifier}/>
+        {/* <SensorCard /> */}
       </STATUS_DISPLAY>
     </>
   );
