@@ -5,6 +5,7 @@ export enum TypeID {
   lamp = "Lamp",
   heater = "Heater",
   humidifier = "Humidifier",
+  nothingReceivedYet = "No Data"
 }
 
 export type MessageBody = {
