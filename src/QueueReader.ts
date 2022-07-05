@@ -1,15 +1,15 @@
 import { delay, ServiceBusClient, ServiceBusMessage } from "@azure/service-bus";
 import {
-  connectionString,
+  messagingConnectionString,
   topicSensorData,
   topicActuatorState,
   subscriptionName,
-} from "./messaging.config";
+} from "./azure.config";
 
 export const subToSensors = (
   messageHandler: (message: any) => Promise<any>
 ) => {
-  const sbClient = new ServiceBusClient(connectionString);
+  const sbClient = new ServiceBusClient(messagingConnectionString);
   const sensorReciever = sbClient.createReceiver(
     topicSensorData,
     subscriptionName
