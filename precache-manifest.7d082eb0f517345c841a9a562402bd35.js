@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "edadf3029c50304bb550",
-    "url": "/planthouse-ui/static/js/main.edadf302.chunk.js"
+    "revision": "79f953203a9bbe864988",
+    "url": "/planthouse-ui/static/js/main.79f95320.chunk.js"
   },
   {
     "revision": "0541ae2869bd7ddcfa61",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/planthouse-ui/static/media/logo.7a907a46.svg"
   },
   {
-    "revision": "4d72a5be9fc8d83f462e5a8d08e9fa2f",
+    "revision": "86d24621e763348f2bfef3c87b95cdc1",
     "url": "/planthouse-ui/index.html"
   }
 ];
