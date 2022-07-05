@@ -24,8 +24,9 @@ export const STATUS_DISPLAY = styled.div`
 `;
 
 export const CARD = styled.div`
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
   padding: 20px;
   padding-bottom: 40px;
   border: 3px solid ${(p) => p.theme.secondary};

@@ -1,11 +1,18 @@
 export enum TypeID {
   light = "Light Sensor",
+  lightSimulator = "light-virtual",
   humidity = "Humidity Sensor",
+  humiditySimulator = "humidity-virtual",
   temperature = "Temperature Sensor",
+  temperatureSimulator = "temperature-virtual",
+  co2Simulator = "co2-virtual",
   lamp = "Lamp",
+  lampSimulator = "lamp-virtual",
   heater = "Heater",
+  heaterSimulator = "heater-virtual",
   humidifier = "Humidifier",
-  nothingReceivedYet = "No Data"
+  humidifierSimulator = "humidifier-virtual",
+  nothingReceivedYet = "No Data",
 }
 
 export type MessageBody = {
