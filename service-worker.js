@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/planthouse-ui/precache-manifest.7d082eb0f517345c841a9a562402bd35.js"
+  "/planthouse-ui/precache-manifest.a5cfb755e3ba519ca28b76bdbc422867.js"
 );
 
 workbox.clientsClaim();
