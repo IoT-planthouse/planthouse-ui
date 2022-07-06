@@ -27,6 +27,7 @@ export const StatusDisplay = () => {
   const [lamp, setLamp] = useState<MessageBody>(defaultData);
   const [heater, setHeater] = useState<MessageBody>(defaultData);
   const [humidifier, setHumidifier] = useState<MessageBody>(defaultData);
+  const [fan, setFan] = useState<MessageBody>(defaultData);
   const [connected, setConnected] = useState({
     connected: false,
     heartBeatReceived: false,
@@ -63,6 +64,9 @@ export const StatusDisplay = () => {
       case TypeID.humidifierSimulator:
         setHumidifier(message.body);
         break;
+      case TypeID.fan:
+      case TypeID.fanSimulator:
+        setFan(message.body);
     }
   };
 
@@ -78,6 +82,7 @@ export const StatusDisplay = () => {
         json.temperature && setTemperature(json.temperature);
         json.co2 && setCo2(json.co2);
         json.lamp && setLamp(json.lamp);
+        json.fan && setFan(json.fan);
       });
   }, []);
 
@@ -111,7 +116,7 @@ export const StatusDisplay = () => {
         <SensorCard sensorData={lamp} />
         <SensorCard sensorData={heater} />
         <SensorCard sensorData={humidifier} />
-        {/* <SensorCard /> */}
+        <SensorCard sensorData={fan} />
       </STATUS_DISPLAY>
     </>
   );

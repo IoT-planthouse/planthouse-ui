@@ -12,6 +12,8 @@ export enum TypeID {
   heaterSimulator = "heater-virtual",
   humidifier = "Humidifier",
   humidifierSimulator = "humidifier-virtual",
+  fan = "Fan",
+  fanSimulator = "fan-virtual",
   nothingReceivedYet = "No Data",
 }
 
