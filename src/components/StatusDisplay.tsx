@@ -82,6 +82,8 @@ export const StatusDisplay = () => {
         json.temperature && setTemperature(json.temperature);
         json.co2 && setCo2(json.co2);
         json.lamp && setLamp(json.lamp);
+        json.humidifier && setHumidifier(json.humidifier);
+        json.heater && setHeater(json.heater);
         json.fan && setFan(json.fan);
       });
   }, []);
