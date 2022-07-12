@@ -62,11 +62,22 @@ export const CONNECTION_ICON = styled.div`
   height: 15px;
   width: 15px;
   display: inline-block;
-  margin-right: 10px
+  margin-right: 10px;
 `;
 
 export const CARD_TYPE = styled.h1`
   color: ${(p) => p.theme.secondary};
   width: 100%;
   margin-bottom: 20px;
-`
+`;
+
+export const OUTDATED = styled.div`
+  /* position: absolute; */
+  /* opacity: 0.4; */
+  color: red;
+  /* transform: rotate(45deg); */
+  ::before {
+    top: 100px;
+    content: "OUTDATED";
+  }
+`;
