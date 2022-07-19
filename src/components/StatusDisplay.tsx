@@ -6,7 +6,7 @@ import { subToSensors } from "../QueueReader";
 import { ServiceBusMessage } from "@azure/service-bus";
 import { TypeID, MessageBody } from "../MessageTypes";
 import { ConnectionCard } from "./ConnectionCard";
-import { CosmosClient } from "@azure/cosmos";
+import { useInterval } from "../hooks/useInterval";
 
 const defaultData: MessageBody = {
   typeID: TypeID.nothingReceivedYet,
@@ -106,36 +106,74 @@ export const StatusDisplay = () => {
   /**
    * during the runtime of the application proof if you are receiving messages every 30 seconds
    */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (connected.heartBeatReceived === false) {
-        setConnected({ connected: false, heartBeatReceived: false });
-      } else {
-        setConnected({ connected: true, heartBeatReceived: false });
-      }
-      if (lightReceived.heartBeatReceived === false) {
-        setLightReceived({ connected: false, heartBeatReceived: false });
-      } else {
-        setLightReceived({ connected: true, heartBeatReceived: false });
-      }
-      if (temperatureReceived.heartBeatReceived === false) {
-        setTemperatureReceived({ connected: false, heartBeatReceived: false });
-      } else {
-        setTemperatureReceived({ connected: true, heartBeatReceived: false });
-      }
-      if (humidityReceived.heartBeatReceived === false) {
-        setHumidityReceived({ connected: false, heartBeatReceived: false });
-      } else {
-        setHumidityReceived({ connected: true, heartBeatReceived: false });
-      }
-      if (co2Received.heartBeatReceived === false) {
-        setCo2Received({ connected: false, heartBeatReceived: false });
-      } else {
-        setCo2Received({ connected: true, heartBeatReceived: false });
-      }
-    }, 30000);
-    // return clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   console.log("start");
+  //   const interval = setInterval(() => {
+  //     // console.log(co2Received);
+  //     if (connected.heartBeatReceived === false) {
+  //       setConnected({ connected: false, heartBeatReceived: false });
+  //     } else {
+  //       setConnected({ connected: true, heartBeatReceived: false });
+  //     }
+  //     if (lightReceived.heartBeatReceived === false) {
+  //       setLightReceived({ connected: false, heartBeatReceived: false });
+  //     } else {
+  //       setLightReceived({ connected: true, heartBeatReceived: false });
+  //     }
+  //     if (temperatureReceived.heartBeatReceived === false) {
+  //       setTemperatureReceived({
+  //         connected: false,
+  //         heartBeatReceived: false,
+  //       });
+  //     } else {
+  //       setTemperatureReceived({ connected: true, heartBeatReceived: false });
+  //     }
+  //     if (humidityReceived.heartBeatReceived === false) {
+  //       setHumidityReceived({ connected: false, heartBeatReceived: false });
+  //     } else {
+  //       setHumidityReceived({ connected: true, heartBeatReceived: false });
+  //     }
+  //     if (co2Received.heartBeatReceived === false) {
+  //       console.log("heatbeat received false")
+  //       setCo2Received({ connected: false, heartBeatReceived: false });
+  //     } else {
+  //       console.log("heartbeat received true");
+  //       setCo2Received({ connected: true, heartBeatReceived: false });
+  //     }
+  //   }, 11000);
+  //   // return clearInterval(interval);
+  // }, []);
+
+  useInterval(() => {
+    if (connected.heartBeatReceived === false) {
+      setConnected({ connected: false, heartBeatReceived: false });
+    } else {
+      setConnected({ connected: true, heartBeatReceived: false });
+    }
+    if (lightReceived.heartBeatReceived === false) {
+      setLightReceived({ connected: false, heartBeatReceived: false });
+    } else {
+      setLightReceived({ connected: true, heartBeatReceived: false });
+    }
+    if (temperatureReceived.heartBeatReceived === false) {
+      setTemperatureReceived({
+        connected: false,
+        heartBeatReceived: false,
+      });
+    } else {
+      setTemperatureReceived({ connected: true, heartBeatReceived: false });
+    }
+    if (humidityReceived.heartBeatReceived === false) {
+      setHumidityReceived({ connected: false, heartBeatReceived: false });
+    } else {
+      setHumidityReceived({ connected: true, heartBeatReceived: false });
+    }
+    if (co2Received.heartBeatReceived === false) {
+      setCo2Received({ connected: false, heartBeatReceived: false });
+    } else {
+      setCo2Received({ connected: true, heartBeatReceived: false });
+    }
+  }, 11000);
 
   return (
     <>
